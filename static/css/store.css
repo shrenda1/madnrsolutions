@@ -1,0 +1,89 @@
+/* .store-container, .filter-form-container{
+    
+} */
+
+
+.card-button{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.card-body a{
+    text-align: center;
+}
+.card{
+    box-shadow: 0px 0px 10px #ccc;
+    margin-top: 20px;
+}
+
+
+/* .filter-form-container input[type=text]{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #eee;
+    padding: 5px 10px;
+}
+.filter-form-container input[type=submit]{
+    border: none;
+    background-color: blueviolet;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    box-shadow: 0px 0px 10px #eee;
+} */
+.product-container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin: 50px;
+}
+.product-container .product-container-left{
+    width: 100%;
+    padding: 20px;
+}
+.product-container .product-container-right{
+    width: 100%;
+    padding: 20px;
+}
+.product-container-left img{
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.product-container-right-button {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+}
+.product-container-right-button a{
+    text-decoration: none;
+    color: white;
+    border: none;
+    background-color: blueviolet;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.product-container-right-button a:hover{
+    color: white;
+}
+
+.product-description tr{
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    
+}
+.product-description td{
+    font-size: 18px;
+    text-align: left;
+    padding: 20px;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    .laptop-container{
+        display: block;
+        margin-top: 10px;
+    }
+  }

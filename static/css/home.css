@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f0f0a;
+    padding: 5px 5px;
+}
+
+ul li{
+    display: inline-block;
+    padding: 20px;
+}
+li a{
+    display: block;
+    text-decoration: none;
+    color: white; 
+    transition: all 0.3s ease 0s; 
+}
+li a:hover{
+    color: blueviolet;
+}
+.logo{
+    height: 50px;
+}
+.logo img{
+    max-height: 100%;
+    cursor: pointer;
+}
+
+.container1, .about-container, .vaccancy-container{
+    margin: 50px;
+}
+.container1 .about-content, .about-container .about-container-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+}
+.about-content-2 .about-content-img, .about-container-content-2 .about-container-content-img, .jobdesc-2 .jobdesc-2-img{
+    width: 100%;
+}
+.about-content-img img, .about-container-content-img img, .jobdesc-2-img img{
+    max-width: 100%;
+}
+.about-content-1, .about-container-content-2{
+    padding: 50px 20px;
+    text-align: justify;
+}
+.job-button, .contact-section-btn{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.job-content{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 1000px) {
+    .job-content{
+        display: block;
+        margin-top: 10px;
+    }
+  }
+.image-container{
+    height: 400px;
+    width: 100%;
+    background-image: url('../image/building.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.image-container h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    z-index: 1;
+}
+.drop a:hover .dropdown-menu{
+    display: block;
+}
+
+
+.contact-section{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin: 50px;
+    border: 1px solid #d1d1e0;
+    background-color: #d1d1e0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.jobdesc{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 50px;
+}
+.jobdesc .jobdesc-1{
+
+}
+.jobdesc .jobdesc-2{
+    padding: 30px;
+}
+
+.jobdesc-table table{
+    width: 100%;
+    margin-top: 20px;
+}
+.jobdesc-table table td, .jobdesc-table table th{
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.job-application-form{
+    margin-top: 50px;
+}
+
+.job-application-form input[type=submit]{
+    background-color: tomato;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 12px 15px;
+}
+.job-application-form input[type=text], .job-application-form input[type=file]{
+    width: 100%;
+    margin-top: 5px;
+    
+}
+/* .job-application-form input[type=text]:{
+    width: 100%;
+    margin-top: 5px;
+} */
+.job-skills{
+    margin-top: 30px;
+}
+footer{
+    text-align: center;
+    padding: 50px;
+}

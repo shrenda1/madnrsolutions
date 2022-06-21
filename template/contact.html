@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M and R</title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        .contact-body{
+            display: grid;
+            grid-template-columns: 60%  40%;
+        }
+        .contact-body .contact-body-1{
+            padding: 20px;
+        }
+        .contact-body .contact-body-2{
+            padding: 20px;
+        }
+        .contact-body .contact-body-1 .contact-body-1-map{
+            text-align: center;
+        }
+        .contact-body .contact-body-1 .contact-body-1-map iframe{
+            border-radius: 5px;
+            width: 600px;
+            height: 450px;
+        }
+        .contact-body .contact-body-2 .contact-body-2-form input[type=text], .contact-body .contact-body-2 .contact-body-2-form input[type=email]{
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+        .contact-body .contact-body-2 .contact-body-2-form input[type=submit]{
+            background-color: tomato;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 12px 15px;
+        }
+        .contact-body .contact-body-2 .contact-body-2-form label{
+            margin-top: 10px;
+        }
+        textarea{
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+        @media only screen and (max-width: 1000px) {
+            .contact-body{
+                display: block;
+                margin-top: 10px;
+            }
+            .contact-body .contact-body-1 .contact-body-1-map iframe{
+                border-radius: 5px;
+                max-width: 100%;
+            }
+        }
+            .active{
+              color: blueviolet;
+            }    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{%static 'image/logo.png' %}" alt=""></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'service' %}">Service</a></li>
+                <li><a href="{% url 'product' %}">Product</a></li>
+                <li><a target="_blank" href="store/storehome">Store</a></li>
+                <li><a href="{% url 'career' %}">Career</a></li>
+                <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="image-container">
+        <h1 style="color:aliceblue">CONTACT US</h1>
+    </div>
+
+    <div class="container1">
+
+        <div class="contact-body">
+            <div class="contact-body-1">
+                <p style="font-size: 30px;">Our Location on Map</p>
+                <hr>
+                <div class="contact-body-1-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.435964221546!2d85.32029631427966!3d27.703822632255424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19e1b27e949d%3A0x3d5cfa91a2058ed2!2sM%26R%20Solution!5e0!3m2!1sen!2snp!4v1655274049244!5m2!1sen!2snp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+                    </iframe>
+                </div>
+            </div>
+            <div class="contact-body-2">
+                <p style="font-size: 30px;">Send Us Your Message</p>
+                <hr>
+                <div class="contact-body-2-form">
+                    <form action="{% url 'contactingus' %}" method="POST">
+                        {% csrf_token %}
+                        Full Name<br>
+                        <input type="text" name="fullname" placeholder="Full Name">
+                        Email Address<br>
+                        <input type="text" name="email" placeholder="Email Address">
+                        Subject<br>
+                        <input type="text" name="subject" placeholder="subject">
+                        Message<br>
+                        <textarea name="desc" rows="5" placeholder="Enter Your Message">
+
+                        </textarea>
+                        <input type="submit" name="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr>
+    <footer>
+        <div class="footer-info">
+          <div class="copywright">
+            COPYRIGHT © 2021 M & R SOLUTION - DESIGNED BY M & R SOLUTION
+          </div>
+          EMAIL : <span style="color: tomato;">INFO@MRSOLUTION.COM.NP</span> <br>
+          MOBILE: <span style="color: tomato;">9851193561 , 9801093561</span> <br>
+          TELEPHONE: <span style="color: tomato;">01-4430696 , 01-4438465</span> <br>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

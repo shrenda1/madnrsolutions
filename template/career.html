@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M and R</title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      .active{
+        color: blueviolet;
+      }
+      .card{
+        box-shadow: 0px 0px 10px #ccc;
+    }    
+    </style>
+  </head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}"><img src="{%static 'image/logo.png' %}" alt=""></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'service' %}">Service</a></li>
+                <li><a href="{% url 'product' %}">Product</a></li>
+                <li><a target="_blank" href="store/storehome">Store</a></li>
+                <li><a href="{% url 'career' %}" class="active">Career</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="image-container">
+        <h1 style="color:aliceblue">Career</h1>
+    </div>
+    <div class="container1">
+        <div class="vaccany-container-header">
+            <p style="font-size: 30px;">Vacancies</p>
+            <hr>
+            <div class="job-content">
+              {% for obj in jobobj%}
+              <div class="card" style="width: 20rem; margin:5px;">
+                  <img src="{{obj.job_img.url}}" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align:center">
+                    <h5 class="card-title">{{obj.job_title}}</h5>
+                    <hr>
+                    <p class="card-text">
+                      <p class="salary">Salart: {{obj.salary}}</p>
+                      <p class="job-type">Job Type: {{obj.job_type}}</p>
+                      <p class="job-compant">Comapny Name: M&R solution</p>
+                  </p>
+                    <a href="{% url 'jobpage' obj.id %} " target = "_blank" style = "text-decoration: none; color: white; background: blueviolet; padding: 10px; border-radius:5px;">More Information</a>
+                  </div>
+              </div>
+              {% endfor %}
+                  
+              </div>
+        </div>
+        
+    </div>
+    <hr>
+    <footer>
+        <div class="footer-info">
+          <div class="copywright">
+            COPYRIGHT © 2021 M & R SOLUTION - DESIGNED BY M & R SOLUTION
+          </div>
+          EMAIL : <span style="color: tomato;">INFO@MRSOLUTION.COM.NP</span> <br>
+          MOBILE: <span style="color: tomato;">9851193561 , 9801093561</span> <br>
+          TELEPHONE: <span style="color: tomato;">01-4430696 , 01-4438465</span> <br>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
